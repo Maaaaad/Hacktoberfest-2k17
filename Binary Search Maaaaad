@@ -1,0 +1,34 @@
+#include<iostream.h>
+#include<conio.h>
+
+void BinarySearch(int ele,int A[],int n)
+{
+    int Low=0,Mid,High=n-1,pos=0;
+Mid=(High+Low)/2;
+  while(Low<=High)
+    {   if(A[Mid]==ele)
+         {cout<<"\n Element found at position "<<Mid+1;pos=1; break;}
+         else if(A[Mid]>ele)
+         High=Mid-1;
+         else Low=Mid+1;
+     }
+if(pos==0)
+cout<<"\n Element not found";
+
+}
+
+void main()
+{
+int n,A[10],ele;
+
+cout<<"How many numbers do you want to enter?";
+   cin>>n;
+cout<<"\nStart entering "<<n<<" numbers in increasing order:\n";
+for(int i=0;i<n;i++)
+cin>>A[i];
+
+cout<<"\n Enter the number you want to search:";
+cin>>ele;
+BinarySearch(ele,A[],n);
+getch();
+}
